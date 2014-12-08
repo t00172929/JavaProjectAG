@@ -32,7 +32,7 @@ private int timeAtPause,currentFrame;
     	 		sprite = frames.get(currentFrame);
     	 	}
     	 	previousTime = time;
-    	 	System.out.print(currentFrame+"   ");
+    	 	//System.out.print(currentFrame+"   ");
     	 	if (currentFrame >= 30)
     	 	{
     	 		stop();

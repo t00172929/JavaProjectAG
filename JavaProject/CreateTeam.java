@@ -68,8 +68,19 @@ public static MyCharacter myChar;
        		
        	}
        	setVisible(false);
-       	AnimationTest2 a2 = new AnimationTest2();
-       	
+       	//AnimationTest2 a2 = new AnimationTest2();
+       	 Ai = new MyCharacter("Ai");
+        player = CreateTeam.myChar;
+    	
+    	Animations.setPlayAnim(player.getName());
+    	Animations.setCpuAnim(Ai.getName());
+    	//System.out.println(player.getName());
+    	//AnimationTest2 a2 = new AnimationTest2();
+    	//a2.setVisible(true);
+    	
+        //test();
+    	
+    	Stats fighting = new Stats(player,Ai);
        }
        catch(Exception e)
        {
@@ -230,18 +241,7 @@ public static MyCharacter myChar;
     		case "Play":
     			//Battle ba = new Battle();
     			//player = new MyCharacter("Ai");
-    	        //Ai = new MyCharacter("Ai");
-        //player = CreateTeam.myChar;
-    	
-    	//Animations.setPlayAnim(player.getName());
-    	//Animations.setCpuAnim(Ai.getName());
-    	//System.out.println(player.getName());
-    	//AnimationTest2 a2 = new AnimationTest2();
-    	//a2.setVisible(true);
-    	
-        //test();
-    	
-    	//Stats fighting = new Stats(player,Ai);
+    	       
     	//fighting.setVisible(true);
     	
     	//fighting.fight(player,Ai);

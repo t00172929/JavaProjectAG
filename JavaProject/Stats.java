@@ -79,18 +79,18 @@ public class Stats extends JFrame {
     
     public void  fight(MyCharacter player,MyCharacter enemy)
     {
-    	System.out.println("repaint was calle");
+    	//System.out.println("repaint was calle");
     	//init();
     
     	updateTitle(player.getHp(),enemy.getHp());
     	//BATTLE PROCESSING
     	//Scanner hold = new Scanner(System.in);
-    	System.out.println(player.getHp());
+    	//System.out.println(player.getHp());
     	while(player.getHp() >0||enemy.getHp() >0)
     	{
     	
     	
-    	System.out.println(player.getName()+" Attacks");
+    	//System.out.println(player.getName()+" Attacks");
     	hitChance(player.getSkl(),enemy.getSkl());
     	if(!missed())
     	{
@@ -105,7 +105,7 @@ public class Stats extends JFrame {
     	if (chkCrit(player.getSkl(),player.getLck(),enemy.getSkl(),enemy.getLck()))
     	{
     		damage *=3;
-    		System.out.println("CRITICAL HIT!!");
+    		//System.out.println("CRITICAL HIT!!");
     		
     		
     		
@@ -114,7 +114,17 @@ public class Stats extends JFrame {
     	
     	
     	
-    	Animations.getCpuAnim().stop();
+    	Animations.getCpuAnim().start();
+    	try{
+    		Thread.sleep(2);
+    		//Animations.getCpuAnim().setFrame(0);
+    		Animations.getCpuAnim().pause();
+    	}
+    	catch(Exception e)
+    	{
+    		
+    	}
+    	
     	Animations.getPlyAnim().start();
     	try{
     	
@@ -126,7 +136,7 @@ public class Stats extends JFrame {
     	}
     	enemy.takeDamage(damage);
         updateTitle(player.getHp(),enemy.getHp());
-    	System.out.println("enemy "+enemy.getName()+ "took "+damage+ " amount of damage"+"\n enemy"+enemy.getName()+ " has "+enemy.getHp()+" remaing hp"+"\n\nHit enter to continue");
+    	//System.out.println("enemy "+enemy.getName()+ "took "+damage+ " amount of damage"+"\n enemy"+enemy.getName()+ " has "+enemy.getHp()+" remaing hp"+"\n\nHit enter to continue");
     	//dummy = hold.nextLine();
     
     	}
@@ -137,7 +147,7 @@ public class Stats extends JFrame {
     	{
     		damage *=3;
     		
-    		System.out.println("CRITICAL HIT!!");
+    		//System.out.println("CRITICAL HIT!!");
     		
     	}
     	   
@@ -153,7 +163,7 @@ public class Stats extends JFrame {
     	}
     	enemy.takeDamage(damage);
         updateTitle(player.getHp(),enemy.getHp());
-    	    System.out.println("enemy "+enemy.getName()+ " took "+damage+ "amount of damage"+"\n enemy "+enemy.getName()+ " has "+enemy.getHp()+" remaing hp"+"\n\nHit enter to continue");
+    	    //System.out.println("enemy "+enemy.getName()+ " took "+damage+ "amount of damage"+"\n enemy "+enemy.getName()+ " has "+enemy.getHp()+" remaing hp"+"\n\nHit enter to continue");
     	   // dummy = hold.nextLine();
     	}
     	chkWL(player.getHp(),enemy.getHp());
@@ -162,7 +172,7 @@ public class Stats extends JFrame {
     	
     	
     	
-    	System.out.println(enemy.getName()+" Attacks");
+    	//System.out.println(enemy.getName()+" Attacks");
     	hitChance(enemy.getSkl(),player.getSkl());
     	if(!missed())
     	{
@@ -178,7 +188,7 @@ public class Stats extends JFrame {
     	{
     		damage *=3;
     		
-    		System.out.println("CRITICAL HIT!!");
+    		//System.out.println("CRITICAL HIT!!");
     		
     	}
     		
@@ -197,7 +207,7 @@ public class Stats extends JFrame {
     	}
         player.takeDamage(damage);
         updateTitle(player.getHp(),enemy.getHp());
-    	System.out.println(player.getName()+" took "+damage+  "amount of damage"+"\n"+player.getName()+"has "+player.getHp()+" remaing hp"+"\n\nHit enter to continue");
+    	//System.out.println(player.getName()+" took "+damage+  "amount of damage"+"\n"+player.getName()+"has "+player.getHp()+" remaing hp"+"\n\nHit enter to continue");
     	//dummy = hold.nextLine();
     	}
     	else
@@ -207,7 +217,7 @@ public class Stats extends JFrame {
     	{
     		damage *=3;
     		
-    		System.out.println("CRITICAL HIT!!");
+    		//System.out.println("CRITICAL HIT!!");
     		
     	}
     	
@@ -224,7 +234,7 @@ public class Stats extends JFrame {
     	    }
     	    player.takeDamage(damage);
             updateTitle(player.getHp(),enemy.getHp());
-    	    System.out.println(player.getName()+" took "+damage+ " amount of damage"+"\n"+player.getName()+" has "+player.getHp()+" remaing hp"+"\n\nHit enter to continue");
+    	    //System.out.println(player.getName()+" took "+damage+ " amount of damage"+"\n"+player.getName()+" has "+player.getHp()+" remaing hp"+"\n\nHit enter to continue");
     	    //dummy = hold.nextLine();
     	}
     	chkWL(player.getHp(),enemy.getHp());
@@ -243,13 +253,13 @@ public class Stats extends JFrame {
     	if (pHealth <=0)
     	{
     		JOptionPane.showMessageDialog(null,"You Lose","Defeat",JOptionPane.INFORMATION_MESSAGE);
-    		System.out.println("you lost");
+    		//System.out.println("you lost");
     		System.exit(0);
     		
     	}
     	if (eHealth <=0)
     	{
-    		System.out.println("you won Congratulations!!");
+    		//System.out.println("you won Congratulations!!");
     		JOptionPane.showMessageDialog(null,"You win Congratulations !!","Victory",JOptionPane.INFORMATION_MESSAGE);
     		wins++;
     		saveWins(wins);
@@ -272,7 +282,7 @@ public class Stats extends JFrame {
     	}
     	else
     	{
-    		System.out.println("The attack Missed!");
+    		//System.out.println("The attack Missed!");
     		status = "MISSED";
     		 try{
     	
